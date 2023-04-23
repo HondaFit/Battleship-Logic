@@ -122,7 +122,7 @@ public:
 		for (; rowIndex < numRows; ++rowIndex)
 		{
 			printf("%d", rowIndex); // prints the horizonal grid numbers
-			for (colIndex = 0; colIndex < numRows; ++colIndex)
+			for (colIndex = 0; colIndex < numCols; ++colIndex)
 			{
 				if (type == BOARDPLAYER1)
 				{
@@ -198,7 +198,7 @@ public:
 
 			}
 
-			if (boardPlayer1[y][x] == '~')
+			if (boardPlayer2[y][x] == '~')
 			{
 				//fprintf(infile, "Player has missed || Coordinate: (%d,%d)\n", x, y);
 				printf("You missed!\n");
@@ -240,7 +240,7 @@ public:
 					}
 
 				}
-				else if (fleetPlayer2.battleship->getIdentification() == boardPlayer2[y][x])
+				else if (fleetPlayer2.cruiser->getIdentification() == boardPlayer2[y][x])
 				{
 					printf("You hit cruiser\n");
 					//fprintf(infile, "Player has scored a hit on the cruiser || Coordinate: (%d,%d)\n", x, y);
@@ -256,7 +256,7 @@ public:
 
 					}
 				}
-				else if (fleetPlayer2.battleship->getIdentification() == boardPlayer2[y][x])
+				else if (fleetPlayer2.submarine->getIdentification() == boardPlayer2[y][x])
 				{
 					printf("You hit submarine\n");
 					//fprintf(infile, "Player has scored a hit on the submarine || Coordinate: (%d,%d)\n", x, y);
@@ -272,7 +272,7 @@ public:
 
 					}
 				}
-				else if (fleetPlayer1.battleship->getIdentification() == boardPlayer2[y][x])
+				else if (fleetPlayer1.destroyer->getIdentification() == boardPlayer2[y][x])
 				{
 					printf("You hit destroyer\n");
 					//fprintf(infile, "Player has scored a hit on the destroyer || Coordinate: (%d,%d)\n", x, y);
